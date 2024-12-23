@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadpool</title>
+    <!-- CSS Linking -->
+    <link rel="stylesheet" href="/Src/Css/reset.css" />
+    <link rel="stylesheet" href="/Src/Css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/index.html"
+          ><img src="/Assets/Images/logo.svg" alt="Logo"
+        /></a>
+      </div>
+      <div class="icons">
+        <img src="/Assets/Icons/user-regular.svg" alt="User Icon" />
+        <img src="/Assets/Icons/bag-shopping-solid.svg" alt="Cart Icon" />
+        <p id="cart-value"></p>
+      </div>
+      <div class="nav-items productpage">
+        <a href="#"><p>Shop</p></a>
+        <a href="#"><p>Care</p></a>
+        <a href="#"><p>Support</p></a>
+      </div>
+    </nav>
+
+    <!-- Product Details and Image Section -->
+    <section class="product-section">
+      <div class="product-deadpool">
+        <a href="#"><img src="/Assets/Images/Dark Deadpool T-shirt.svg" alt="Deadpool" /></a>
+       <a href="#"><img src="/Assets/Images/deadpool-product.svg" alt="Deadpool-product" /></a> 
+      </div>
+      <div class="product-img">
+        <img src="/Assets/Images/product img1.png" alt="image1" />
+        <img src="/Assets/Images/product img2.png" alt="image2" />
+      </div>
+    </section>
+
+    <!-- Size & Accordion Section -->
+    <section class="price-size-container">
+      <div class="deadpool-content">
+        <img src="/Assets/Images/deadpool-content.svg" alt="deadpool-content" />
+        <div class="price-container">
+          <span class="original-price">1,199/- INR</span>
+          <span class="sale-price">999/- INR</span>
+          <p class="shipping-info">Shipping calculated at checkout.</p>
+        </div>
+        <div class="size-container">
+          <div class="size-header">
+            <span>SELECT SIZE</span>
+            <a href="#" class="size-guide">SIZE GUIDE</a>
+          </div>
+          <div class="size-options" id="size-options">
+            <button class="size">XS</button>
+            <button class="size">S</button>
+            <button class="size active">M</button>
+            <button class="size">L</button>
+            <button class="size">XL</button>
+          </div>
+          <div class="cart-container">
+            <div class="quantity-selector">
+              <button class="quantity-btn" id="minus">-</button>
+              <span class="quantity"></span>
+              <button class="quantity-btn" id="plus">+</button>
+            </div>
+            <button class="add-to-cart">ADD TO CART</button>
+          </div>
+          <button class="buy-now">BUY NOW</button>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            PRODUCT DETAILS
+          </button>
+          <div class="accordion-content">
+            <p>Composition: 100% cotton</p>
+            <p>GSM: 240</p>
+            <p>Colour: Beige</p>
+            <p>Country of production: India</p>
+            <p>Wash care: Machine wash cold with similar colours.</p>
+            <p>Only non-chlorine.</p>
+            <p>Tumble dry low.</p>
+            <p>Warm Iron if needed.</p>
+            <p>Sizing: Garment measurement in inches.</p>
+            <p>Estimated order processing time: 48 hours.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            PRODUCT DESCRIPTION
+          </button>
+          <div class="accordion-content">
+            <p>Size and Fit:</p>
+            <p>The model (height 5'7") is wearing size S</p>
+            <p>Chest - 32</p>
+            <p>Waist - 30</p>
+            <p>Sleeve length: Long sleeve</p>
+            <p>Neckline: Round neck</p>
+            <p>Fit: Oversized drop shoulder tee</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            PLEASE NOTE:
+          </button>
+          <div class="accordion-content">
+            <ul>
+              <li>
+                Colours may slightly vary depending on your screen brightness.
+              </li>
+              <li>Actual product specifications may vary +/-5%</li>
+              <li>All the products have different sizes and size chart</li>
+              <li>
+                This is an oversized fit. If you prefer a less baggy fit, please
+                size down.
+              </li>
+              <li>MRP: Rs.1299/- incl. of all taxes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="recomended clear">
+      <p>recommended for you :)</p>
+    </div>
+    <div class="products">
+      <div class="T-shirt">
+        <a href="/Src/product-deadpool.html"><img src="/Assets/Images/Dark Deadpool T-shirt.svg" alt="Deadpool T-shirt" class="product-image"></a>
+        <p>DEADPOOL IN THE DARK</p>
+        <p>1,199 INR</p>
+      </div>
+      <div class="T-shirt">
+        <a href="/Src/product-dreamville.html"><img src="/Assets/Images/Dreamville T-shirt.svg" alt="Dreamville T-shirt" class="product-image"></a>
+        <p>WE REMEMBER DREAMVILLE</p>
+        <p>1,199 INR</p>
+      </div>
+      <div class="T-shirt">
+        <a href="/Src/product-dark.html"><img src="/Assets/Images/DarkOutside T-shirt.svg" alt="DarkOutside T-shirt" class="product-image"></a>
+        <p>WHEN IT'S DARK OUTSIDE</p>
+        <p>1,199 INR</p>
+      </div>
+    </div>
+    <!-- Cart Empty Popup -->
+<div id="cart-empty-popup" class="cart-popup hidden">
+  <div class="cart-popup-content">
+    <button class="close-btn" onclick="closeCartPopup()">← YOUR CART</button>
+    <div class="popup-logo">
+      <img src="/Assets/Images/logo.svg" alt="Cart Logo" />
+    </div>
+    <p class="cart-empty-message">Oops! Your cart is empty</p>
+    <button class="shop-btn" onclick="redirectToShop()">LET'S SHOP</button>
+  </div>
+</div>
+    <footer class="footer">
+      <div class="footer-item"><a href="#">care</a></div>
+      <div class="footer-item"><a href="#">contact</a></div>
+      <div class="footer-item"><a href="#">support</a></div>
+      <div class="footer-logo">
+          <a href="#"><img src="/Assets/Images/logo.svg" alt="Logo"></a>
+      </div>
+      <div class="footer-item"><a href="#">Insta</a></div>
+      <div class="footer-item"><a href="#">app X</a></div>
+      <div class="footer-item"><a href="#">YT</a></div>
+      </footer>
+
+    <!-- External JavaScript File -->
+    <script src="/Src/Js/script.js"></script>
+  </body>
+</html>
